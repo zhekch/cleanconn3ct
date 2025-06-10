@@ -6,8 +6,9 @@ import sys
 from modules.update import update
 
 downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
-UPDATE_INTERVAL = 60 * 60 * 24  # daily
+UPDATE_INTERVAL = 60  # * 60 * 24  # daily
 last_update_check = 0
+
 
 def get_version_file():
     if getattr(sys, "frozen", False):
@@ -15,6 +16,7 @@ def get_version_file():
     else:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_dir, "modules", "update", "version.json")
+
 
 while True:
     if time.time() - last_update_check >= UPDATE_INTERVAL:
