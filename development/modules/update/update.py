@@ -1,6 +1,7 @@
 import requests
 import json
 from packaging import version
+import os
 
 
 VERSION_URL = ".../version.json"
@@ -26,4 +27,9 @@ def check_for_update(current_version):
         print(f"Could not check for update: {e}")
 
 
-check_for_update(json.load(open("modules/update/version.json"))["version"])
+if __name__ == "__main__":
+    this_dir = os.path.dirname(__file__)
+    ver_file = os.path.join(this_dir, "version.json")
+    with open(ver_file) as f:
+        ver = json.load(f)["version"]
+    check_for_update(ver)
