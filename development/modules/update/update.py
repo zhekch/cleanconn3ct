@@ -25,11 +25,3 @@ def check_for_update(current_version):
             print("Up to date.")
     except Exception as e:
         print(f"Could not check for update: {e}")
-
-
-if __name__ == "__main__":
-    this_dir = os.path.dirname(__file__)
-    ver_file = os.path.join(this_dir, "version.json")
-    with open(ver_file) as f:
-        ver = json.load(f)["version"]
-    check_for_update(ver)
