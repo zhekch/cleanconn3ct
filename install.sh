@@ -16,5 +16,5 @@ curl -L \
 
 chown ${USER}:staff ~/Library/LaunchAgents/com.n3ctor.agent.plist
 chmod 644 ~/Library/LaunchAgents/com.n3ctor.agent.plist
-chmod +x "~/Library/Application Support/com.conn3ct/n3ctor.sh"
+chmod +x ~/Library/Application Support/com.conn3ct/n3ctor.sh
 launchctl load ~/Library/LaunchAgents/com.n3ctor.agent.plist
